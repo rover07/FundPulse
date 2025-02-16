@@ -60,11 +60,10 @@ public class InvestorServiceImpl implements InvestorService {
 
 
         try {
-            String fileUrl = googleDriveUploadService.uploadFile(itrFile);
-//            return ResponseEntity.ok("File uploaded successfully: " + fileUrl);
+            String folderId = "https://drive.google.com/drive/folders/1B9VQxWAquEOGJM9LoNtzk0f64W_qcs-Z?usp=drive_link"; // Replace with your actual Google Drive folder ID
+            String fileUrl = googleDriveUploadService.uploadFile(itrFile, folderId);
             System.out.println("File uploaded successfully: " + fileUrl);
         } catch (IOException e) {
-
             return ResponseEntity.status(500).body("File upload failed: " + e.getMessage());
         }
         //String url = uploadService.uploadFile(itrFile);

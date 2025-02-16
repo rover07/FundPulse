@@ -19,6 +19,8 @@ public class GoogleDriveController {
 
     @PostMapping(value = "/upload-pdf", consumes = "multipart/form-data")
     public ResponseEntity<String> registerInvestor(@ModelAttribute InvestorForm investorForm) {
+        System.out.println("Received request in registerInvestor()");
+        System.out.println("Investor Email: " + investorForm.getEmail());
         return investorService.registerInvestor(investorForm);
     }
 }

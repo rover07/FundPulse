@@ -12,7 +12,7 @@ import Layout from "./Layout.jsx";
 import LoginInvestor from "./components/account/LoginInvestor.jsx";
 import LoginStartup from "./components/account/LoginStartup.jsx";
 import Demonikhil from "./demonikhil.jsx";
-import SignUpStartup from "./components/Account/SignupStartup.jsx";
+import SignUpStartup from "./components/account/SignupStartup.jsx";
 import SignUpInvestor from "./components/Account/SignupInvestor.jsx";
 import Dashboard from "./components/dashboard.jsx";
 
@@ -25,12 +25,8 @@ const router = createBrowserRouter(
       <Route path="loginInvestor" element={<LoginInvestor />} />
       <Route path="loginStartup" element={<LoginStartup />} />
       <Route path="demo" element={<Demonikhil />} />
-      
 
-      {/*
-        
       <Route path="dashboard" element={<Dashboard />} />
-        */}
     </Route>
   )
 );

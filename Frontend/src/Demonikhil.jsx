@@ -2,7 +2,7 @@ import React from 'react'
 import { useState, useEffect } from "react";
 
 const Demonikhil = () => {
-  const [pdfUrl, setPdfUrl] = useState("https://res.cloudinary.com/dkoisquex/image/upload/v1739710174/ovdl2hg1qimstksfhpqr.pdf");
+  const [pdfUrl, setPdfUrl] = useState("https://drive.google.com/file/d/1aKBz1Eor5R4BJzH5fETGidx4EICiQIHt/view");
 
   // useEffect(() => {
   //   const fetchPdf = async () => {
