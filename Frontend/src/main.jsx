@@ -9,15 +9,19 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import Layout from "./Layout.jsx";
-import SignUp from "./Components/SignUp/SignUp.jsx";
-import Login from "./Components/SignUp/Login.jsx";
+import SignUpInvestor from "./components/account/SignupInvestor.jsx";
+import LoginInvestor from "./components/account/LoginInvestor.jsx";
+import LoginStartup from "./components/account/LoginStartup.jsx";
+import SignUpStartup from "./components/account/SignupStartup.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Layout />}>
       <Route path="" element={<App />} />
-      <Route path="signup" element={<SignUp />} />
-      <Route path="login" element={<Login />} />
+      <Route path="signUpStartup" element={<SignUpStartup />} />
+      <Route path="signUpInvestor" element={<SignUpInvestor />} />
+      <Route path="loginInvestor" element={<LoginInvestor />} />
+      <Route path="loginStartup" element={<LoginStartup />} />
     </Route>
   )
 );

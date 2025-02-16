@@ -2,6 +2,20 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "type": "java",
+      "name": "BackendApplication",
+      "request": "launch",
+      "mainClass": "BackendApplication",
+      "projectName": "Backend"
+    },
+    {
+      "type": "java",
+      "name": "BackendApplication",
+      "request": "launch",
+      "mainClass": "com.fundpulse.app.BackendApplication",
+      "projectName": "Backend"
+    },
+    {
       "name": "C/C++ Runner: Debug Session",
       "type": "cppdbg",
       "request": "launch",

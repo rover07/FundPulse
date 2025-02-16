@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link, NavLink } from "react-router-dom";
 
-export default function Login() {
+export default function LoginInvestor() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -60,13 +60,6 @@ export default function Login() {
             Login
           </button>
         </form>
-
-        <p className="text-gray-400 text-center mt-4">
-          Don't have an account?{" "}
-          <button onClick={() => navigate("/signup")} className="text-blue-400 hover:underline">
-            Sign up
-          </button>
-        </p>
       </div>
     </div>
   );
