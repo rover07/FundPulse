@@ -28,7 +28,7 @@ export default function LoginStartup() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-900">
       <div className="bg-gray-800 bg-opacity-80 backdrop-blur-md p-8 rounded-xl shadow-2xl max-w-sm w-full">
-        <h2 className="text-3xl font-bold text-white text-center mb-6">Login</h2>
+        <h2 className="text-3xl font-bold text-white text-center mb-6"> Startup Login</h2>
         {error && <p className="text-red-500 text-center mb-3">{error}</p>}
         <form onSubmit={handleSubmit}>
           <div className="mb-4">

@@ -1,5 +1,7 @@
 package com.fundpulse.app.service.impl;
 
+import com.fundpulse.app.service.DocumentUploadService;
+import com.fundpulse.app.service.GoogleDriveUploadService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -11,6 +13,8 @@ import com.fundpulse.app.repository.InvestorRepo;
 import com.fundpulse.app.service.DocumentVerificationService;
 import com.fundpulse.app.service.InvestorService;
 
+import java.io.IOException;
+
 @Service
 public class InvestorServiceImpl implements InvestorService {
 
@@ -19,6 +23,12 @@ public class InvestorServiceImpl implements InvestorService {
 
   @Autowired
   private InvestorRepo investorRepo;
+
+  @Autowired
+  private DocumentUploadService uploadService;
+
+  @Autowired
+  private GoogleDriveUploadService googleDriveUploadService;
 
   public ResponseEntity<String> registerInvestor(InvestorForm investorForm) {
     try {
@@ -47,10 +57,24 @@ public class InvestorServiceImpl implements InvestorService {
         investor.setExtractedIncome(12000000); // Dummy extracted value
         investor.setVerified(true); // Verified as income >= ₹1 crore
 
+
+
+        try {
+            String fileUrl = googleDriveUploadService.uploadFile(itrFile);
+//            return ResponseEntity.ok("File uploaded successfully: " + fileUrl);
+            System.out.println("File uploaded successfully: " + fileUrl);
+        } catch (IOException e) {
+
+            return ResponseEntity.status(500).body("File upload failed: " + e.getMessage());
+        }
+        //String url = uploadService.uploadFile(itrFile);
+
+      //  System.out.println("nnnnnnnnnnnnnnnnn  "+url);
+
         // Store ITR file
         investor.setItrDocument(itrFile.getBytes());
 
-        investorRepo.save(investor);
+       // investorRepo.save(investor);
         return ResponseEntity.ok("Investor registered successfully and verified.");
     } catch (Exception e) {
         return ResponseEntity.badRequest().body("Error processing signup: " + e.getMessage());

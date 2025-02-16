@@ -285,7 +285,7 @@ function SignUpStartup() {
                 <input
                   type="password"
                   id="PasswordConfirmation"
-                  name="password_confirmation"
+                  name="confirmPassword"
                   className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-xs dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200 h-8"
                   value={formData.confirmPassword}
                   onChange={handleChange}

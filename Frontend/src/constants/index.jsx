@@ -58,63 +58,125 @@ export const testimonials = [
   },
 ];
 
+// export const features = [
+//   {
+//     icon: <BotMessageSquare />,
+//     text: "Drag-and-Drop Interface",
+//     description:
+//       "Easily design and arrange your VR environments with a user-friendly drag-and-drop interface.",
+//   },
+//   {
+//     icon: <Fingerprint />,
+//     text: "Multi-Platform Compatibility",
+//     description:
+//       "Build VR applications that run seamlessly across multiple platforms, including mobile, desktop, and VR headsets.",
+//   },
+//   {
+//     icon: <ShieldHalf />,
+//     text: "Built-in Templates",
+//     description:
+//       "Jumpstart your VR projects with a variety of built-in templates for different types of applications and environments.",
+//   },
+//   {
+//     icon: <BatteryCharging />,
+//     text: "Real-Time Preview",
+//     description:
+//       "Preview your VR application in real-time as you make changes, allowing for quick iterations and adjustments.",
+//   },
+//   {
+//     icon: <PlugZap />,
+//     text: "Collaboration Tools",
+//     description:
+//       "Work together with your team in real-time on VR projects, enabling seamless collaboration and idea sharing.",
+//   },
+//   {
+//     icon: <GlobeLock />,
+//     text: "Analytics Dashboard",
+//     description:
+//       "Gain valuable insights into user interactions and behavior within your VR applications with an integrated analytics dashboard.",
+//   },
+// ];
+
+// export const checklistItems = [
+//   {
+//     title: "Code merge made easy",
+//     description: "Track the performance of your VR apps and gain insights into user behavior.",
+//   },
+//   {
+//     title: "Review code without worry",
+//     description: "Track the performance of your VR apps and gain insights into user behavior.",
+//   },
+//   {
+//     title: "AI Assistance to reduce time",
+//     description: "Track the performance of your VR apps and gain insights into user behavior.",
+//   },
+//   {
+//     title: "Share work in minutes",
+//     description: "Track the performance of your VR apps and gain insights into user behavior.",
+//   },
+// ];
+
+import { Handshake, Banknote, ShieldCheck, TrendingUp, Globe, Users } from "lucide-react";
+
 export const features = [
   {
-    icon: <BotMessageSquare />,
-    text: "Drag-and-Drop Interface",
+    icon: <Handshake />,
+    text: "Seamless Investor-Business Matching",
     description:
-      "Easily design and arrange your VR environments with a user-friendly drag-and-drop interface.",
+      "Connect with potential investors or businesses effortlessly using our AI-driven matching algorithm.",
   },
   {
-    icon: <Fingerprint />,
-    text: "Multi-Platform Compatibility",
+    icon: <Banknote />,
+    text: "Secure Blockchain-Based Transactions",
     description:
-      "Build VR applications that run seamlessly across multiple platforms, including mobile, desktop, and VR headsets.",
+      "Ensure safe and transparent funding with smart contracts and blockchain security.",
   },
   {
-    icon: <ShieldHalf />,
-    text: "Built-in Templates",
+    icon: <ShieldCheck />,
+    text: "Decentralized & Trustless System",
     description:
-      "Jumpstart your VR projects with a variety of built-in templates for different types of applications and environments.",
+      "Eliminate intermediaries with a trustless, peer-to-peer funding mechanism powered by blockchain.",
   },
   {
-    icon: <BatteryCharging />,
-    text: "Real-Time Preview",
+    icon: <TrendingUp />,
+    text: "Real-Time Investment Tracking",
     description:
-      "Preview your VR application in real-time as you make changes, allowing for quick iterations and adjustments.",
+      "Monitor fund flow, ROI, and project progress in real time through our analytics dashboard.",
   },
   {
-    icon: <PlugZap />,
-    text: "Collaboration Tools",
+    icon: <Globe />,
+    text: "Global Accessibility",
     description:
-      "Work together with your team in real-time on VR projects, enabling seamless collaboration and idea sharing.",
+      "Open doors to international investors and businesses with borderless funding opportunities.",
   },
   {
-    icon: <GlobeLock />,
-    text: "Analytics Dashboard",
+    icon: <Users />,
+    text: "Community-Driven Decision Making",
     description:
-      "Gain valuable insights into user interactions and behavior within your VR applications with an integrated analytics dashboard.",
+      "Participate in decentralized governance models and community-driven investment decisions.",
   },
 ];
 
 export const checklistItems = [
   {
-    title: "Code merge made easy",
-    description: "Track the performance of your VR apps and gain insights into user behavior.",
+    title: "Smart Contracts for Secure Agreements",
+    description: "Utilize blockchain-based smart contracts to ensure fair and transparent funding agreements.",
   },
   {
-    title: "Review code without worry",
-    description: "Track the performance of your VR apps and gain insights into user behavior.",
+    title: "Investor Due Diligence Made Easy",
+    description: "Access verified investor and business profiles with built-in credibility scores and history.",
   },
   {
-    title: "AI Assistance to reduce time",
-    description: "Track the performance of your VR apps and gain insights into user behavior.",
+    title: "AI-Powered Matching",
+    description: "Leverage AI to match investors with the most promising businesses based on their preferences.",
   },
   {
-    title: "Share work in minutes",
-    description: "Track the performance of your VR apps and gain insights into user behavior.",
+    title: "Instant & Low-Cost Transactions",
+    description: "Reduce transaction fees and speed up funding transfers with blockchain-powered payments.",
   },
 ];
+
+
 
 export const pricingOptions = [
   {

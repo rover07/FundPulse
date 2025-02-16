@@ -3,7 +3,6 @@ import { Link, NavLink } from "react-router-dom";
 import axios from "axios";
 import { API_BASE_URL } from "../../config";
 
-
 function SignUpInvestor() {
   const [formData, setFormData] = useState({
     fullName: "",
@@ -21,25 +20,41 @@ function SignUpInvestor() {
   const handleFileChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.files[0] });
   };
-  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // Create a FormData instance
+    const formDataToSend = new FormData();
+    formDataToSend.append("fullName", formData.fullName);
+    formDataToSend.append("email", formData.email);
+    formDataToSend.append("phone", formData.phone);
+    formDataToSend.append("password", formData.password);
+    formDataToSend.append("confirmPassword", formData.confirmPassword);
+    formDataToSend.append("investmentCategories", formData.investmentCategories);
+
+    // Append file only if it exists
+    if (formData.itrDocument) {
+      formDataToSend.append("itrDocument", formData.itrDocument);
+    }
+
     try {
       const response = await axios.post(
-        `${API_BASE_URL}/api/investor/signup`,
-        formData,
+        `${API_BASE_URL}/api/drive/upload-pdf`,
+        formDataToSend, // Send FormData instead of the raw object
         {
           headers: {
             "Content-Type": "multipart/form-data",
           },
         }
       );
+
       console.log("Signup successful:", response.data);
     } catch (error) {
       console.error("Error signing up:", error);
     }
   };
+
   return (
     <section className="bg-white dark:bg-gray-900">
       <div className="lg:grid lg:min-h-screen lg:grid-cols-12">
@@ -272,7 +287,7 @@ function SignUpInvestor() {
                 </select>
               </div>
 
-              <div className="col-span-6 sm:col-span-3">
+              {/* <div className="col-span-6 sm:col-span-3">
                 <label
                   htmlFor="Password"
                   className="block text-sm font-medium text-gray-700 dark:text-gray-200"
@@ -288,7 +303,7 @@ function SignUpInvestor() {
                   value={formData.email}
                   onChange={handleChange}
                 />
-              </div>
+              </div> */}
               <div className="col-span-6 sm:col-span-3">
                 <label
                   htmlFor="PasswordConfirmation"
@@ -339,8 +354,6 @@ function SignUpInvestor() {
                   name="itrDocument"
                   accept="application/pdf"
                   className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-xs dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200 h-8"
-                  value={formData.itrDocument}
-
                   onChange={handleFileChange}
                 />
               </div>
